@@ -1,0 +1,14 @@
+%%metro title: j23414/bam-depth
+%%metro style: dark
+%%metro line_order: span
+%%metro line: main | BAM | #2db572
+
+graph LR
+    subgraph pipeline [Checkpoint]
+        samtools_index([Samtools Index])
+        samtools_coverage([Samtool Coverage])
+        samtools_depth([Samtools Depth])
+
+        samtools_index -->|main| samtools_coverage
+        samtools_index -->|main| samtools_depth
+    end
